@@ -22,5 +22,32 @@ strs[i] contains only UTF-8 characters.
 
 '''
 
-def encode(list_of_strs):
+def encode(strs):
+    res = ''
+
+    for s in strs:
+        res += str(len(s)) + '#' + s
     
+    print(res)
+    return res
+
+def decode(str):
+    res, i = [], 0
+
+    while i < len(str):
+        j = i
+        while str[j] != '#':
+            j += 1
+        length = int(str[i:j])
+        i = j + 1
+        j = i + length
+        res.append(str[i:j])
+        i = j
+    
+    print(res)
+    return res
+        
+
+encode(["neet","code","love","you"])
+
+decode(encode(["neet","code","love","you"]))
