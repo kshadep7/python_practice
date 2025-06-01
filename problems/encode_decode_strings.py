@@ -21,7 +21,8 @@ Constraints:
 strs[i] contains only UTF-8 characters.
 
 '''
-
+# append len of str + # as prefix to every str in the list
+# and concatenate the entire string
 def encode(strs):
     res = ''
 
@@ -30,7 +31,9 @@ def encode(strs):
     
     print(res)
     return res
-
+# using 2 pointers, get len of each str and using that
+# get the str and add to the res list
+# move the pointer to next str prefix
 def decode(str):
     res, i = [], 0
 
